@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BSNUX Software Factory -- Demos site</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+#sidebar1 { width: 220px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+#mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA5D36rcsQF0UYZIbY7Y5E0RQokmCXkiUvPJhLMHEQuBDypcK2LRRCv-uBx2RQ1-9Tq5dD8KsuLX1okA"></script>
+<script type="text/javascript" src="/js/mygmaps.js"></script>
+</head>
+<body onload="load()" unLoad="GUnload()">
+<!-- begin #container -->
+<div id="container">
+    <!-- begin #header -->
+    <div id="header">
+    	<div class="headerBackground"><h1>Demostration site</h1></div>
+        <div id="navcontainer">
+            
+        </div>
+    </div>
+    <!-- end #header -->
+    <!-- begin #sidebar1 -->
+    <div id="sidebar1">
+	  <div class="t">
+        <div class="b">
+        <div class="l">
+        <div class="r">
+        <div class="bl">
+        <div class="br">
+        <div class="tl">
+        <div class="tr">
+		   <form name="frmGeo" onsubmit="return showLngLat(document.frmGeo.address.value)" >
+            <h2>Geolocalization</h2>
+            <p>
+                <b>Enter address:</b>
+		          <input type="text" name="address"/>
+		          <input type="submit" value="Get coordinates" />
+            </p>
+		  </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+		<br/>
+        <div class="n_t">
+        <div class="n_b">
+        <div class="n_l">
+        <div class="n_r">
+        <div class="n_bl">
+        <div class="n_br">
+        <div class="n_tl">
+        <div class="n_tr">
+            <h1 style="text-align: center"><img src="/images/twitter.jpg" alt="tweets"
+    title="tweets" /></h1>
+		    {% if posts %}
+               {% for post in posts %}
+		         <p><b>{{ post.created_at|slice:":22" }}</b><br/>{{ post.text }}</p>
+               {% endfor %}
+		    {% else %}
+		       Ooppss!! An error with <a href="http://twitter.com">Twitter</a> has occurred. Please,
+    try it again!<br/>
+		    {% endif %}
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <br />
+    </div>
+    <!-- end #sidebar1 -->
+    <!-- begin #mainContent -->
+    <div id="mainContent">
+        <div class="t">
+        <div class="b">
+        <div class="l">
+        <div class="r">
+        <div class="bl">
+        <div class="br">
+        <div class="tl">
+        <div class="tr">
+            <h1>WELCOME TO OUR DEMO SITE!!</h1>
+            <p>
+                <b>Presentation</b><br /><br />
+               Here you can find different small applications made by <a
+		  href="http://www.bsnux.com">BSNUX Software Factory</a> to
+		  show how we work. Enjoy it!<br /><br />
+		        These examples shows different mashups to integrate
+    <a href="http://twitter.com">Twitter</a>, <a
+    href="http://www.lastfm.com">last.fm</a> and <a href="maps.google.com">Google Maps</a> API's in the same web site or page.<br /><br />
+                <b>Remember: We can develop your own new and fantastic
+		  software!</b><br />
+            </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <br />
+        <div class="t">
+        <div class="b">
+        <div class="l">
+        <div class="r">
+        <div class="bl">
+        <div class="br">
+        <div class="tl">
+        <div class="tr">
+            <h1>Our favourite music artists <img
+    src="/images/lastfm.png" alt="Last.fm" title="Last.fm"
+    align="middle" style="margin-left: 20px"/></h1>
+            <p>
+               {% if artists %}
+		       <table border="0">
+               {% for art in artists %}
+		         <td >
+				   <td><b>{{ art.name }}</b></td>
+				   <td><a href="{{ art.url }}"><img style="border:1px solid" src="{{ art.imgURL }}" alt="{{ art.name }}"/></a><td/>
+	               <td style="padding: 15px"><em>{{ art.bio }}</em></td>
+				 </tr>
+               {% endfor %}
+				</table>
+		    {% else %}
+		       Ooppss!! An error with <a href="http://www.lastfm.com">last.fm</a> has occurred. Please,
+    try it again!<br/>
+		    {% endif %}
+            </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <!-- end #mainContent -->
+   <br class="clearfloat" />
+    <!-- begin #footer -->
+    <div id="footer">
+    	<a href="http://creativecommons.org/licenses/GPL/2.0/" class="rss">
+<img alt="CC-GNU GPL" border="0" src="http://creativecommons.org/images/public/cc-GPL-a.png" /></a>
+        <p>
+	  This page validates as CSS. You can test it:
+        <a title="This page validates as CSS" href="http://jigsaw.w3.org/css-validator/check/referer" class="footerLink"><abbr title="Cascading Style Sheets">CSS</abbr></a><br/>
+        </p>
+    </div>
+    <!-- end #footer -->
+</div>
+<!-- end #container -->
+</body>
+</html>
