@@ -1,0 +1,15 @@
+#######################
+   BSNUX Software Factory
+   http://www.bsnux.com
+   
+   Author: Arturo Fernandez (arturo@bsnux.com)
+#######################
+
+This is a demo. application for our costumers. It's shows a mashup
+integration with Google Maps, Twitter and Last.fm web sites using
+their respectives API's.
+
+Application is ready for Google App Engine and it's deployed in this
+system/server.
+
+To see our application go to: http://bsnuxdemos.appspot.com
